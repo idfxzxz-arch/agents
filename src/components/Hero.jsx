@@ -40,7 +40,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        <div className="relative min-h-[22rem] sm:min-h-[30rem]">
+        <div className="relative hidden min-h-[30rem] sm:block">
           <div className="absolute inset-x-4 top-14 h-64 rounded-full bg-white/20 blur-3xl" />
           <Mascot />
           {decorations.map(({ Icon, label, className, delay }) => (
