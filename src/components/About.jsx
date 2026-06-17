@@ -16,7 +16,7 @@ export default function About() {
           initial={{ opacity: 0, x: -32 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.35 }}
-          className="relative rounded-[32px] bg-[#EAF1FF] p-6 shadow-[0_24px_70px_rgba(0,80,248,0.12)]"
+          className="relative hidden rounded-[32px] bg-[#EAF1FF] p-6 shadow-[0_24px_70px_rgba(0,80,248,0.12)] sm:block"
         >
           <div className="rounded-[28px] border border-[#DCE7FF] bg-white p-4">
             <div className="mb-4 flex gap-2">

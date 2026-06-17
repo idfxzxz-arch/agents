@@ -111,7 +111,7 @@ export function PricingCard({ name, features, popular = false }) {
   );
 }
 
-export function ProjectCard({ title, category, accent = '#0050F8' }) {
+export function ProjectCard({ title, category, href, accent = '#0050F8' }) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 28 }}
@@ -143,9 +143,14 @@ export function ProjectCard({ title, category, accent = '#0050F8' }) {
       <div className="p-3">
         <p className="text-sm font-bold text-white/60">{category}</p>
         <h3 className="mt-1 text-xl font-extrabold text-white">{title}</h3>
-        <button className="mt-5 rounded-full bg-white px-5 py-2 text-sm font-extrabold text-[#0050F8]">
+        <a
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-5 inline-flex rounded-full bg-white px-5 py-2 text-sm font-extrabold text-[#0050F8]"
+        >
           Lihat Detail
-        </button>
+        </a>
       </div>
     </motion.article>
   );
