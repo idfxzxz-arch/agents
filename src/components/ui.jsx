@@ -54,7 +54,7 @@ export function SectionTitle({ eyebrow, title, description, light = false }) {
   );
 }
 
-export function ServiceCard({ icon: Icon, title, description, delay = 0 }) {
+export function ServiceCard({ icon: Icon, title, description, accent = '#0050F8', delay = 0 }) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 30 }}
@@ -62,9 +62,13 @@ export function ServiceCard({ icon: Icon, title, description, delay = 0 }) {
       viewport={{ once: true, amount: 0.25 }}
       transition={{ delay, duration: 0.5, ease: 'easeOut' }}
       whileHover={{ y: -8 }}
-      className="rounded-[28px] border border-[#DCE7FF] bg-white p-6 shadow-[0_18px_55px_rgba(0,80,248,0.08)] transition-shadow hover:shadow-[0_24px_70px_rgba(0,80,248,0.16)]"
+      className="relative overflow-hidden rounded-[28px] border border-[#DCE7FF] bg-white p-6 shadow-[0_18px_55px_rgba(0,80,248,0.08)] transition-shadow hover:shadow-[0_24px_70px_rgba(0,80,248,0.16)]"
     >
-      <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-3xl bg-[linear-gradient(145deg,#FFFFFF,#DCE7FF)] text-[#0050F8] shadow-[inset_-8px_-8px_18px_rgba(0,80,248,0.12),inset_8px_8px_18px_rgba(255,255,255,0.9),0_18px_34px_rgba(0,80,248,0.18)]">
+      <span className="absolute inset-x-0 top-0 h-1.5" style={{ background: accent }} />
+      <div
+        className="mb-6 flex h-16 w-16 items-center justify-center rounded-3xl bg-[linear-gradient(145deg,#FFFFFF,#DCE7FF)] shadow-[inset_-8px_-8px_18px_rgba(0,80,248,0.12),inset_8px_8px_18px_rgba(255,255,255,0.9),0_18px_34px_rgba(0,80,248,0.18)]"
+        style={{ color: accent }}
+      >
         <Icon size={30} strokeWidth={2.2} />
       </div>
       <h3 className="text-xl font-extrabold text-[#102033]">{title}</h3>
@@ -73,7 +77,7 @@ export function ServiceCard({ icon: Icon, title, description, delay = 0 }) {
   );
 }
 
-export function PricingCard({ name, features, popular = false }) {
+export function PricingCard({ name, features, popular = false, accent = '#0050F8' }) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 28 }}
@@ -81,8 +85,12 @@ export function PricingCard({ name, features, popular = false }) {
       viewport={{ once: true, amount: 0.25 }}
       transition={{ duration: 0.55, ease: 'easeOut' }}
       whileHover={{ y: -8 }}
-      className={`relative rounded-[28px] border p-7 shadow-[0_18px_55px_rgba(16,32,51,0.08)] ${popular ? 'border-[#0050F8] bg-[#0050F8] text-white shadow-[0_26px_70px_rgba(0,80,248,0.28)]' : 'border-[#DCE7FF] bg-white text-[#102033]'}`}
+      className={`relative overflow-hidden rounded-[28px] border p-7 shadow-[0_18px_55px_rgba(16,32,51,0.08)] ${popular ? 'border-[#0050F8] bg-[#0050F8] text-white shadow-[0_26px_70px_rgba(0,80,248,0.28)]' : 'border-[#DCE7FF] bg-white text-[#102033]'}`}
     >
+      <span
+        className="absolute inset-x-0 top-0 h-1.5"
+        style={{ background: popular ? 'linear-gradient(90deg,#19D3FF,#FFE66D,#FF8A7A)' : accent }}
+      />
       {popular && (
         <span className="absolute right-6 top-6 rounded-full bg-white px-4 py-2 text-xs font-extrabold text-[#0050F8]">
           Paling Populer
@@ -111,7 +119,7 @@ export function PricingCard({ name, features, popular = false }) {
   );
 }
 
-export function ProjectCard({ title, category, href, accent = '#0050F8' }) {
+export function ProjectCard({ title, category, href, image, accent = '#0050F8' }) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 28 }}
@@ -127,16 +135,17 @@ export function ProjectCard({ title, category, href, accent = '#0050F8' }) {
             <span className="h-2.5 w-2.5 rounded-full bg-[#ffd166]" />
             <span className="h-2.5 w-2.5 rounded-full bg-[#2ed573]" />
           </div>
-          <div className="grid min-h-[150px] gap-3 rounded-xl bg-white p-4">
-            <div className="h-7 w-2/3 rounded-full" style={{ background: accent }} />
-            <div className="grid grid-cols-3 gap-3">
-              <div className="col-span-2 rounded-2xl bg-[#EAF1FF]" />
-              <div className="aspect-square rounded-2xl" style={{ background: accent }} />
-            </div>
-            <div className="grid grid-cols-2 gap-3">
-              <div className="h-12 rounded-2xl bg-[#DCE7FF]" />
-              <div className="h-12 rounded-2xl bg-[#DCE7FF]" />
-            </div>
+          <div className="relative aspect-[16/11] overflow-hidden rounded-xl bg-white">
+            <img
+              src={image}
+              alt={`Preview website ${title}`}
+              loading="lazy"
+              className="h-full w-full object-cover object-top"
+            />
+            <div
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-16"
+              style={{ background: `linear-gradient(180deg, transparent, ${accent}26)` }}
+            />
           </div>
         </div>
       </div>

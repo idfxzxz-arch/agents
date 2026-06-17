@@ -4,11 +4,11 @@ import Mascot from './Mascot';
 import { ButtonPrimary, ButtonSecondary } from './ui';
 
 const decorations = [
-  { Icon: Laptop, label: 'Laptop', className: 'left-0 top-20', delay: 0 },
-  { Icon: PanelsTopLeft, label: 'Browser', className: 'right-4 top-8', delay: 0.2 },
-  { Icon: Code2, label: 'Code', className: 'left-8 bottom-12', delay: 0.4 },
-  { Icon: FileText, label: 'Dokumen', className: 'right-10 bottom-20', delay: 0.6 },
-  { Icon: MessageCircle, label: 'Chat', className: 'right-28 top-40', delay: 0.8 },
+  { Icon: Laptop, label: 'Laptop', className: 'left-0 top-20 bg-[#19D3FF]/22 text-white', delay: 0 },
+  { Icon: PanelsTopLeft, label: 'Browser', className: 'right-4 top-8 bg-white text-[#0050F8]', delay: 0.2 },
+  { Icon: Code2, label: 'Code', className: 'left-8 bottom-12 bg-[#FFE66D]/24 text-white', delay: 0.4 },
+  { Icon: FileText, label: 'Dokumen', className: 'right-10 bottom-20 bg-[#4FF0B7]/24 text-white', delay: 0.6 },
+  { Icon: MessageCircle, label: 'Chat', className: 'right-28 top-40 bg-[#FF8A7A]/24 text-white', delay: 0.8 },
 ];
 
 export default function Hero() {
@@ -18,6 +18,8 @@ export default function Hero() {
       className="relative overflow-hidden bg-[linear-gradient(135deg,#0050F8_0%,#006DFF_50%,#003ECC_100%)] px-4 pb-16 pt-32 text-white sm:px-6 lg:px-10 lg:pb-24 lg:pt-36"
     >
       <div className="absolute left-1/2 top-28 h-72 w-72 -translate-x-1/2 rounded-full bg-white/18 blur-3xl" />
+      <div className="absolute -left-20 bottom-10 h-52 w-52 rounded-full bg-[#4FF0B7]/25 blur-3xl" />
+      <div className="absolute -right-16 top-24 h-56 w-56 rounded-full bg-[#FFE66D]/22 blur-3xl" />
       <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1fr_1.02fr]">
         <motion.div
           initial={{ opacity: 0, y: 34 }}
@@ -49,7 +51,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
               transition={{ opacity: { delay, duration: 0.4 }, scale: { delay, duration: 0.4 }, y: { delay, duration: 4, repeat: Infinity, ease: 'easeInOut' } }}
-              className={`absolute hidden items-center gap-2 rounded-2xl border border-white/24 bg-white/16 px-4 py-3 text-sm font-bold shadow-[0_18px_40px_rgba(0,35,120,0.18)] backdrop-blur-xl sm:flex ${className}`}
+              className={`absolute hidden items-center gap-2 rounded-2xl border border-white/24 px-4 py-3 text-sm font-bold shadow-[0_18px_40px_rgba(0,35,120,0.18)] backdrop-blur-xl sm:flex ${className}`}
             >
               <Icon size={18} />
               {label}
