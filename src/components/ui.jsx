@@ -7,7 +7,7 @@ export function ButtonPrimary({ children, href = '#kontak', className = '' }) {
       href={href}
       whileHover={{ scale: 1.04, y: -2 }}
       whileTap={{ scale: 0.98 }}
-      className={`inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-[#0050F8] shadow-[0_18px_50px_rgba(16,32,51,0.18)] transition hover:bg-[#EAF1FF] ${className}`}
+      className={`inline-flex items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#FFFFFF,#FFF3D6)] px-6 py-3 text-sm font-bold text-[#0050F8] shadow-[0_18px_50px_rgba(16,32,51,0.18)] transition hover:bg-[#EAF1FF] ${className}`}
     >
       {children}
       <ArrowRight size={18} strokeWidth={2.4} />
@@ -21,7 +21,7 @@ export function ButtonSecondary({ children, href = '#layanan', className = '' })
       href={href}
       whileHover={{ scale: 1.04, y: -2 }}
       whileTap={{ scale: 0.98 }}
-      className={`inline-flex items-center justify-center rounded-full border border-white/45 bg-white/12 px-6 py-3 text-sm font-bold text-white backdrop-blur-xl transition hover:bg-white/20 ${className}`}
+      className={`inline-flex items-center justify-center rounded-full border border-white/45 bg-[#FF8A7A]/18 px-6 py-3 text-sm font-bold text-white backdrop-blur-xl transition hover:bg-[#FF8A7A]/28 ${className}`}
     >
       {children}
     </motion.a>
@@ -126,7 +126,7 @@ export function ProjectCard({ title, category, href, image, accent = '#0050F8' }
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       whileHover={{ y: -8 }}
-      className="group overflow-hidden rounded-[28px] border border-white/15 bg-white/10 p-4 shadow-[0_20px_60px_rgba(0,0,0,0.18)] backdrop-blur-xl"
+      className="group overflow-hidden rounded-[28px] border border-white/15 bg-white/12 p-4 shadow-[0_20px_60px_rgba(0,0,0,0.18)] backdrop-blur-xl"
     >
       <div className="overflow-hidden rounded-3xl bg-white p-3">
         <div className="rounded-2xl border border-[#DCE7FF] bg-[#EAF1FF] p-3 transition-transform duration-500 group-hover:scale-[1.03]">
@@ -156,7 +156,8 @@ export function ProjectCard({ title, category, href, image, accent = '#0050F8' }
           href={href}
           target="_blank"
           rel="noreferrer"
-          className="mt-5 inline-flex rounded-full bg-white px-5 py-2 text-sm font-extrabold text-[#0050F8]"
+          className="mt-5 inline-flex rounded-full px-5 py-2 text-sm font-extrabold text-[#102033] shadow-lg"
+          style={{ background: `linear-gradient(135deg,#FFFFFF,${accent}36)` }}
         >
           Lihat Detail
         </a>

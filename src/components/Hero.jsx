@@ -4,18 +4,18 @@ import Mascot from './Mascot';
 import { ButtonPrimary, ButtonSecondary } from './ui';
 
 const decorations = [
-  { Icon: Laptop, label: 'Laptop', className: 'left-0 top-20 bg-[#19D3FF]/22 text-white', delay: 0 },
-  { Icon: PanelsTopLeft, label: 'Browser', className: 'right-4 top-8 bg-white text-[#0050F8]', delay: 0.2 },
-  { Icon: Code2, label: 'Code', className: 'left-8 bottom-12 bg-[#FFE66D]/24 text-white', delay: 0.4 },
-  { Icon: FileText, label: 'Dokumen', className: 'right-10 bottom-20 bg-[#4FF0B7]/24 text-white', delay: 0.6 },
-  { Icon: MessageCircle, label: 'Chat', className: 'right-28 top-40 bg-[#FF8A7A]/24 text-white', delay: 0.8 },
+  { Icon: Laptop, label: 'Laptop', className: 'left-0 top-20 bg-[#19D3FF]/30 text-white', delay: 0 },
+  { Icon: PanelsTopLeft, label: 'Browser', className: 'right-4 top-8 bg-[#FFF0A8] text-[#102033]', delay: 0.2 },
+  { Icon: Code2, label: 'Code', className: 'left-8 bottom-12 bg-[#FFE66D]/34 text-white', delay: 0.4 },
+  { Icon: FileText, label: 'Dokumen', className: 'right-10 bottom-20 bg-[#4FF0B7]/34 text-white', delay: 0.6 },
+  { Icon: MessageCircle, label: 'Chat', className: 'right-28 top-40 bg-[#FF8A7A]/34 text-white', delay: 0.8 },
 ];
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-[linear-gradient(135deg,#0050F8_0%,#006DFF_50%,#003ECC_100%)] px-4 pb-16 pt-32 text-white sm:px-6 lg:px-10 lg:pb-24 lg:pt-36"
+      className="relative overflow-hidden bg-[radial-gradient(circle_at_16%_22%,#FF8A7A_0%,transparent_26%),radial-gradient(circle_at_82%_18%,#FFE66D_0%,transparent_22%),radial-gradient(circle_at_72%_76%,#4FF0B7_0%,transparent_24%),linear-gradient(135deg,#0050F8_0%,#6C5CFF_48%,#003ECC_100%)] px-4 pb-16 pt-32 text-white sm:px-6 lg:px-10 lg:pb-24 lg:pt-36"
     >
       <div className="absolute left-1/2 top-28 h-72 w-72 -translate-x-1/2 rounded-full bg-white/18 blur-3xl" />
       <div className="absolute -left-20 bottom-10 h-52 w-52 rounded-full bg-[#4FF0B7]/25 blur-3xl" />
