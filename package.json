@@ -1,4 +1,7 @@
 {
+  "name": "alphacode",
+  "version": "1.0.0",
+  "description": "Landing page AlphaCode untuk jasa pembuatan website dan bantuan tugas digital.",
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
